@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  instagram:
+    image: docker.arvancloud.ir/postgres
+    container_name: instagram_test
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: pass
+    ports:
+      - 12345:5432
+    volumes:
+      - ./database/postgres/data:/var/lib/postgresql/data
+      - ./database/postgres/backups:/backups
